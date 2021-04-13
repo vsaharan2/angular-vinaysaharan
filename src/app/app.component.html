@@ -1,0 +1,26 @@
+<h1>Candidates</h1>
+<form>
+  <input type="checkbox" name="male"> Male
+  <input type="checkbox" name="female">Female
+  <input type="text">
+</form>
+
+<table>
+  <tr *ngFor="let elementOfList of jsonList">
+    <td>{{elementOfList.id}}</td>
+    <td>{{elementOfList.first_name}}</td>
+    <td>{{elementOfList.last_name}}</td>
+    <td>{{elementOfList.email}}</td>
+    <td>{{elementOfList.gender}}</td>
+  </tr>
+</table>
+
+<h2>Add New Candidate</h2>
+<div >
+  <input type="text" [(ngModel)]="newElement.first_name" placeholder="First Name"> <br/>
+  <input type="text" [(ngModel)]="newElement.last_name" placeholder="Last Name"><br/>
+  <input type="email" [(ngModel)]="newElement.email" placeholder="Email"><br/>
+  <input type="radio" [(ngModel)]="newElement.gender" name="gender" value="Male">Male<br/>
+  <input type="radio" [(ngModel)]="newElement.gender" name="gender" value="Female">Female<br/>
+  <input type="button" (click)="addElementToList()" value="Add">
+</div>
